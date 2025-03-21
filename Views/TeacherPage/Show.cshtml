@@ -1,0 +1,57 @@
+﻿@model HTTP_5125_Cumulative1.Models.TeacherWithCoursesViewModel
+
+@{
+    ViewData["Title"] = "Teacher Details";
+}
+
+<h2 style="font-size: 24px; margin-bottom: 20px;">Teacher Details</h2>
+
+@if (Model.Teacher == null)
+{
+    <p>Sorry, the teacher you are looking for does not exist.</p>
+}
+else
+{
+    <div style="margin-bottom: 20px;">
+        <p><strong>ID:</strong> @Model.Teacher.TeacherId</p>
+        <p><strong>Name:</strong> @Model.Teacher.FirstName @Model.Teacher.LastName</p>
+        <p><strong>Employee Number:</strong> @Model.Teacher.EmployeeNumber</p>
+        <p><strong>Hire Date:</strong> @Model.Teacher.HireDate.ToShortDateString()</p>
+        <p><strong>Salary:</strong> @Model.Teacher.Salary</p>
+    </div>
+
+    <h3 style="font-size: 20px; margin-bottom: 10px;">Courses Taught by @Model.Teacher.FirstName @Model.Teacher.LastName</h3>
+
+    @if (Model.Courses.Any())
+    {
+        <ul style="list-style-type: none; padding-left: 0;">
+            @foreach (var course in Model.Courses)
+            {
+                <li style="padding: 5px 0; font-size: 16px;">
+                    <strong>@course.CourseName</strong> (@course.CourseCode)
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No courses available for this teacher.</p>
+    }
+}
+
+<!-- Add some simple spacing for aesthetics -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    strong {
+        color: #333;
+    }
+</style>
