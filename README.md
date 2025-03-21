@@ -1,69 +1,36 @@
-HTTP-5125-Cumulative1
-This is the repository for the assignment project for HTTP-5125 (Cumulative 1). The project includes a set of RESTful APIs and other functionalities designed to interact with a simple educational system.
+# HTTP-5125-Cumulative1
 
-Features
-Teacher API:
+This repository contains the code for the HTTP-5125 Cumulative 1 assignment. The project implements a basic API that manages data for teachers and students within a simple educational system. The following features are included:
 
-List Teachers
-Find Teacher by ID
-List Courses by Teacher ID
-List Teachers by Hire Date Range
-Student API:
+## Features:
+- **Teacher Management:** 
+  - List all teachers.
+  - Retrieve teacher details by ID.
+  - Filter teachers based on their hire date.
+  - List all courses assigned to a teacher by their ID.
 
-List Students
-Get Student by ID
-Installation
-To run this project locally, follow these steps:
+- **Student Management:** 
+  - List all students.
+  - Retrieve student details by ID.
 
-Clone the repository:
+## Endpoints:
+- `GET /api/TeacherAPI/ListTeachers`: Lists all teachers in the system.
+- `GET /api/TeacherAPI/FindTeacher/{id}`: Fetches details of a specific teacher based on their ID.
+- `GET /api/TeacherAPI/ListCoursesByTeacherId/{id}`: Lists all courses assigned to a teacher based on their ID.
+- `GET /api/StudentAPI/ListStudents`: Lists all students in the system.
+- `GET /api/StudentAPI/GetStudentById/{id}`: Fetches details of a specific student based on their ID.
 
-bash
-Copy
-Edit
-git clone https://github.com/SamuelNii32/HTTP-5125-Cumulative1.git
-Navigate to the project directory:
+## Technologies Used:
+- ASP.NET Core Web API
+- C#
+- Entity Framework Core (for database interaction)
 
-bash
-Copy
-Edit
-cd HTTP-5125-Cumulative1
-Open the solution file: You can open the solution file HTTP-5125-Cumulative1.sln in Visual Studio.
+## Setup:
+1. Clone the repository to your local machine.
+2. Open the solution in Visual Studio.
+3. Run the application and access the endpoints using a tool like Postman or via browser (for GET requests).
 
-Restore dependencies: In Visual Studio, the dependencies should be restored automatically. If not, you can restore them manually via the NuGet Package Manager.
+## Additional Information:
+This assignment demonstrates the implementation of an API for managing simple educational records. It includes routes for interacting with teacher and student data, and the ability to filter and retrieve relevant information.
 
-Run the project: Press F5 to start the application, or use Ctrl+F5 to run without debugging.
-
-Usage
-This project exposes several API endpoints. Here are the available API calls:
-
-Teacher API
-Get all teachers:
-
-Method: GET
-Endpoint: /api/TeacherAPI/ListTeachers
-Get a teacher by ID:
-
-Method: GET
-Endpoint: /api/TeacherAPI/FindTeacher/{id}
-Get courses by teacher ID:
-
-Method: GET
-Endpoint: /api/TeacherAPI/ListCoursesByTeacherId/{teacherId}
-Get teachers by hire date range:
-
-Method: GET
-Endpoint: /api/TeacherAPI/ListTeachersByHireDateRange?startDate={startDate}&endDate={endDate}
-Student API
-Get all students:
-
-Method: GET
-Endpoint: /api/StudentAPI/ListStudents
-Get student by ID:
-
-Method: GET
-Endpoint: /api/StudentAPI/GetStudentById/{id}
-Technologies Used
-C#
-ASP.NET Core
-Entity Framework
-SQL Server
+Feel free to contribute or improve upon the code for further enhancements.
